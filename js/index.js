@@ -62,6 +62,8 @@ parentToNavItems.prepend(newNavItem1);
 parentToNavItems.appendChild(newNavItem2);
 
 
+
+
 //including our nav items into our doc via the object
 
 const secondNavItem = document.querySelector('a:nth-of-type(2)');
@@ -85,6 +87,7 @@ navItems.forEach( item => item.style.color = 'green' );
 
 
 
+
 //========= FIRST SECTION / CTA ==========
 
 const h1 = document.querySelector('h1');
@@ -96,15 +99,26 @@ button.textContent = siteContent.cta.button;
 firstImage.src = siteContent.cta["img-src"];
 
 
+//stretch goal, add event to button that manipulates the dom on click
+
+const zaksAwesome = () => {
+  h1.textContent = 'But Zak is way more awesome';
+}
+
+button.addEventListener('click', zaksAwesome);
+
+
 
 
 //======== MAIN CONTENT ========
 
+//top content
 const featureH4 = document.querySelector('.top-content .text-content:first-of-type h4');
 const featureP = document.querySelector('.top-content .text-content:first-of-type p');
 
 const aboutH4 = document.querySelector('.top-content .text-content:last-of-type h4');
 const aboutP = document.querySelector('.top-content .text-content:last-of-type p');
+
 
 featureH4.textContent = siteContent["main-content"]["features-h4"];
 featureP.textContent = siteContent["main-content"]["features-content"];
@@ -117,10 +131,32 @@ aboutP.textContent = siteContent["main-content"]["about-content"]
 const middleImage = document.querySelector('#middle-img');
 middleImage.src = siteContent["main-content"]["middle-img-src"];
 
+//bottom content
 
-// servicesH4.textContent = siteContent["main-content"]["services-h4"];
-// productH4.textContent = siteContent["main-content"]["product-h4"];
-// visionH4.textContent = siteContent["main-content"]["vision-h4"];
+const servicesH4 = document.querySelector('.bottom-content .text-content:nth-of-type(1) h4');
+const servicesP = document.querySelector('.bottom-content .text-content:nth-of-type(1) p');
+
+const productH4 = document.querySelector('.bottom-content .text-content:nth-of-type(2) h4');
+const productP = document.querySelector('.bottom-content .text-content:nth-of-type(2) p');
+
+const visionH4 = document.querySelector('.bottom-content .text-content:nth-of-type(3) h4');
+const visionP = document.querySelector('.bottom-content .text-content:nth-of-type(3) p');
+
+
+servicesH4.textContent = siteContent["main-content"]["services-h4"];
+servicesP.textContent = siteContent["main-content"]["services-content"];
+
+productH4.textContent = siteContent["main-content"]["product-h4"];
+productP.textContent = siteContent["main-content"]["product-content"];
+
+visionH4.textContent = siteContent["main-content"]["vision-h4"];
+visionP.textContent = siteContent["main-content"]["vision-content"];
+
+//mouseover event for vision
+
+visionH4.addEventListener('mouseover', function(){
+  visionH4.textContent = "Seriously, hes pretty cool";
+})
 
 
 
