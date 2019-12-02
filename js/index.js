@@ -40,3 +40,99 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+
+//========== NAV BAR =============
+
+//appending new items to the end of the nav
+
+const newNavItem1 = document.createElement('a');
+const newNavItem2 = document.createElement('a');
+
+newNavItem1.href = '#';
+newNavItem2.href = '#';
+
+newNavItem1.textContent = 'COOL';
+newNavItem2.textContent = 'BEANS';
+
+const parentToNavItems = document.querySelector('nav');
+
+parentToNavItems.prepend(newNavItem1);
+parentToNavItems.appendChild(newNavItem2);
+
+
+//including our nav items into our doc via the object
+
+const secondNavItem = document.querySelector('a:nth-of-type(2)');
+const thirdNavItem = document.querySelector('a:nth-of-type(3)');
+const fourthNavItem = document.querySelector('a:nth-of-type(4)');
+const fifthNavItem = document.querySelector('a:nth-of-type(5)');
+const sixthNavItem = document.querySelector('a:nth-of-type(6)');
+
+secondNavItem.textContent = siteContent.nav["nav-item-1"];
+thirdNavItem.textContent = siteContent.nav["nav-item-2"];
+fourthNavItem.textContent = siteContent.nav["nav-item-4"];
+fifthNavItem.textContent = siteContent.nav["nav-item-5"];
+sixthNavItem.textContent = siteContent.nav["nav-item-6"];
+
+
+//change color of nav text to green
+
+const navItems = document.querySelectorAll('a');
+navItems.forEach( item => item.style.color = 'green' );
+
+
+
+
+//========= FIRST SECTION / CTA ==========
+
+const h1 = document.querySelector('h1');
+const button = document.querySelector('button');
+const firstImage = document.querySelector('#cta-img');
+
+h1.textContent = siteContent.cta.h1;
+button.textContent = siteContent.cta.button;
+firstImage.src = siteContent.cta["img-src"];
+
+
+
+
+//======== MAIN CONTENT ========
+
+const featureH4 = document.querySelector('.top-content .text-content:first-of-type h4');
+const featureP = document.querySelector('.top-content .text-content:first-of-type p');
+
+const aboutH4 = document.querySelector('.top-content .text-content:last-of-type h4');
+const aboutP = document.querySelector('.top-content .text-content:last-of-type p');
+
+featureH4.textContent = siteContent["main-content"]["features-h4"];
+featureP.textContent = siteContent["main-content"]["features-content"];
+
+aboutH4.textContent = siteContent["main-content"]["about-h4"];
+aboutP.textContent = siteContent["main-content"]["about-content"]
+
+//Add image to main content
+
+const middleImage = document.querySelector('#middle-img');
+middleImage.src = siteContent["main-content"]["middle-img-src"];
+
+
+// servicesH4.textContent = siteContent["main-content"]["services-h4"];
+// productH4.textContent = siteContent["main-content"]["product-h4"];
+// visionH4.textContent = siteContent["main-content"]["vision-h4"];
+
+
+
+
+//====== contact =======
+
+const contactH4 = document.querySelector('.contact h4');
+const contactAddress = document.querySelector('.contact p:nth-of-type(1)');
+const contactPhone = document.querySelector('.contact p:nth-of-type(2)');
+const contactEmail = document.querySelector('.contact p:last-of-type');
+
+contactH4.textContent = siteContent["contact"]["contact-h4"];
+contactAddress.textContent = siteContent.contact.address;
+contactPhone.textContent = siteContent.contact.phone;
+contactEmail.textContent = siteContent.contact.email;
